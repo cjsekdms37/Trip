@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan a trip</title>
+    <style>
+      .container {
+        background: linear-gradient(
+          179.1deg,
+          rgb(247, 238, 238) -1.9%,
+          rgb(247, 202, 201) 44.9%,
+          rgb(145, 168, 208) 96.1%
+        );
+        border-radius: 20px;
+        margin: 50px auto;
+        max-width: 600px;
+        padding: 50px 100px 20px 100px;
+      }
+      body {
+        background-color: white;
+        margin: 0 auto;
+      }
+      h1 {
+        color: #005096;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-weight: 800;
+
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+      h2 {
+        color: #6086c7;
+        padding-bottom: 30px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      img {
+        display: block;
+        border-radius: 20px 20px;
+        margin: 0 auto;
+        max-width: 100%;
+        width: 450px;
+      }
+      p {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0 auto;
+        padding: 40px 5%;
+        line-height: 20px;
+        text-align: center;
+      }
+      .p1 {
+        color: #567ec3;
+        text-align: center;
+      }
+      .p2 {
+        color: #4874c0;
+        text-align: center;
+      }
+      .coder {
+        color: #ecd4d5;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: small;
+        line-height: 50px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      a {
+        color: aliceblue;
+        font-size: small;
+        display: block;
+        margin: 0 auto;
+      }
+      a:active {
+        color: blue;
+      }
+      a:hover {
+        color: #4874c0;
+      }
+      button {
+        background-color: hsl(2, 64%, 91%);
+        border: 1px solid #6086c7;
+        border-radius: 30px;
+        color: #005096;
+        cursor: pointer;
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        margin: 0 auto;
+        padding: 11px 18px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.405);
+        text-align: center;
+      }
+      button:hover {
+        color: hsl(2, 64%, 91%);
+        text-decoration: underline;
+        background-color: #6086c7;
+        transition: all 150ms ease-in-out;
+        border: 1px solid hsl(2, 64%, 91%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Where the Sky Meets the Earth</h1>
+      <h2>Salar de Uyuni, Bolivia</h2>
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/088/793/original/salar-de-uyuni.jpeg?1688779101"
+        alt="Salar de Uyuni, Bolivia"
+      />
+      <p>
+        <span class="p1"
+          >Bolivia's Salar de Uyuni is considered one of the
+          <em>most extreme and remarkable vistas</em> in all of South America,
+          if not Earth. Stretching more than 4,050 square miles of the
+          Altiplano, it is the <strong>world's largest salt flat</strong>, left
+          behind by prehistoric lakes evaporated long ago. Here, a thick crust
+          of salt extends to the horizon, covered by quilted, polygonal patterns
+          of salt rising from the ground.</span
+        ><br /><br />
+        <span class="p2"
+          >At certain times of the year, nearby lakes overflow and a thin layer
+          of water transforms the flats into a stunning reflection of the sky.
+          This beautiful and otherworldly terrain serves as a lucrative
+          extraction site for salt and lithium—the element responsible for
+          powering laptops, smart phones, and electric cars. In addition to
+          local workers who harvest these minerals, the landscape is home to the
+          world's first salt hotel and populated by road-tripping
+          tourists.</span
+        >
+      </p>
+
+      <button>✈️ Plan a trip</button>
+
+      <br />
+      <br />
+      <br />
+      <a href="https://en.wikipedia.org/wiki/Salar_de_Uyuni" target="_blank">
+        Learn more on wikipedia
+      </a>
+      <hr />
+      <div class="coder">Coded by Jenny D. Michaels</div>
+    </div>
+    <script>
+      function tripPlan() {
+        let userName = prompt("What is your name?");
+        let userAge = prompt("How old are you?");
+        if (userAge < 18) {
+          let guardian = prompt("Are you traveling with a guardian?");
+          if (guardian === "yes") {
+            let guardianEmail = prompt(
+              "What is your guardian's email address?"
+            );
+            alert(
+              "Hi, " +
+                userName +
+                "!" +
+                " We will send your guardian an email (" +
+                guardianEmail +
+                ") for the next step! 😀"
+            );
+          } else {
+            alert(
+              "Hi, " +
+                userName +
+                "!" +
+                " Unfortuneately, we cannot help you plan a trip without a guardian ☹️"
+            );
+          }
+        } else {
+          let userEmail = prompt("What is your email address?");
+          alert(
+            "Hi, " +
+              userName +
+              "!" +
+              " We will send you an email to " +
+              userEmail +
+              " for the next step! 😀"
+          );
+        }
+      }
+      let tripButton = document.querySelector("button");
+      tripButton.addEventListener("click", tripPlan);
+    </script>
+  </body>
+</html>
